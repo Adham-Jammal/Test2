@@ -15,6 +15,7 @@ import {
   Select,
   InputNumber,
   Spin,
+  Switch,
 } from 'antd';
 import {
   InstagramOutlined,
@@ -87,6 +88,7 @@ const CreateOrUpdateProduct: React.FC<CreateOrUpdateProductProps> = ({
   const [form] = Form.useForm();
   const [arabicName, setArabicName] = useState<ItemValidation>();
   const [combinationModalVisible, setCombinationModalVisible] = useState<boolean>(false);
+  const [notifyAllFollowers, setNotifyAllFollowers] = useState<boolean>(false);
   const [combinations, setCombinations] = useState<ProductCombinationCreationDto[]>([]);
   const [currentCombination, setCurrentCombination] = useState<ProductCombinationCreationDto>();
   const [currentCombinationIndex, setCurrentCombinationIndex] = useState<number>();
@@ -427,6 +429,24 @@ const CreateOrUpdateProduct: React.FC<CreateOrUpdateProductProps> = ({
                     onRemove={() => form.setFieldsValue({ imageUrl: undefined })}
                   />
                 </Form.Item>
+                {/* notifyAllFollowers */}
+                <Form.Item
+                name="notifyAllFollowers"
+                rules={[required]}
+                colon={false}
+                label={L('notifyAllFollowers')}
+                initialValue ={notifyAllFollowers}
+              >
+                <Switch
+                  checkedChildren={L('Yes')}
+                  unCheckedChildren={L('No')}
+                  defaultChecked={notifyAllFollowers}
+                  onChange={(checked: boolean) =>{
+                    setNotifyAllFollowers(checked);
+                    form.setFieldsValue(notifyAllFollowers)}
+                  }
+                />
+              </Form.Item>
               </TabPane>
               <TabPane
                 tab={

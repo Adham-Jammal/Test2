@@ -81,6 +81,8 @@ export default () => {
   const [salesExpectationInMonth, setSalesExpectationInMonth] = React.useState<number | undefined>(
     undefined
   );
+  const [lat, setLat] = React.useState<number>(24.633333);
+  const [lng, setLng] = React.useState<number>(46.716667);
 
   React.useEffect(() => {
     async function getBanksAndCategoriesAndCities(): Promise<void> {
@@ -501,10 +503,12 @@ export default () => {
         <small className="map-hint-text">{L('pleaseSelectThePositionFromMap')}</small>
         <GoogleMapComp
           withClick={false}
-          position={{ lat: 24.633333, lng: 46.716667 }}
-          handlePointClick={(val: google.maps.LatLngLiteral) =>
-            form.setFieldsValue({ placeDescription: val })
-          }
+          position={{ lat, lng }}
+          handlePointClick={(val: google.maps.LatLngLiteral) => {
+            form.setFieldsValue({ placeDescription: val });
+            setLat(val.lat);
+            setLng(val.lng);
+          }}
         />
       </Form.Item>
 

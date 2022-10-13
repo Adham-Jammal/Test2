@@ -93,7 +93,7 @@ class ShopManagerDetailsModal extends React.Component<IShopManagerDetailsModalPr
               <div className="detail-wrapper">
                 <span className="detail-label">{L('PhoneNumber')}:</span>
                 <span className="detail-value">
-                  {shopManagerModel !== undefined ? shopManagerModel.phoneNumber : undefined}
+                  {shopManagerModel !== undefined ? shopManagerModel.phoneNumber : undefined} {/*shopManagerModel.countryCode phonenumber bug*/}
                 </span>
               </div>
               <div className="detail-wrapper">

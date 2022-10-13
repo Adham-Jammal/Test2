@@ -1,13 +1,13 @@
 /* eslint-disable */
 import * as React from 'react';
-import { Card, Table, Tag, Select, Button } from 'antd';
+import { Card, Table, Tag, Select, Button,Tooltip} from 'antd';
 import { inject, observer } from 'mobx-react';
 import Stores from '../../stores/storeIdentifier';
 import AppComponentBase from '../../components/AppComponentBase';
 import { L } from '../../i18next';
 import {
   DownOutlined,
-  //EyeOutlined,
+  EyeOutlined,
   FilterOutlined,
   UpOutlined,
 } from '@ant-design/icons';
@@ -21,7 +21,7 @@ import shopsService from '../../services/shops/shopsService';
 import { LiteEntityDto } from '../../services/locations/dto/liteEntityDto';
 import { ShopDto } from '../../services/shops/dto/shopDto';
 import { OrderType, PaymentMethod } from '../../lib/types';
-// import OrderDetailsModal from './components/orderDetailsModal';
+import OrderDetailsModal from './components/orderDetailsModal';
 
 export interface IOrdersProps {
   orderStore: OrderStore;
@@ -306,15 +306,16 @@ export class Orders extends AppComponentBase<IOrdersProps, IOrdersState> {
     {
       title: L('Action'),
       key: 'action',
-      render: (text: string, item: OrderDto) => null,
-      // <div>
-      //   <Tooltip title={L('Details')}>
-      //     <EyeOutlined
-      //       className="action-icon "
-      //       onClick={() => this.openOrderDetailsModal({ id: item.id })}
-      //     />
-      //   </Tooltip>
-      // </div>
+      render: (text: string, item: OrderDto) => (
+      <div>
+        <Tooltip title={L('Details')}>
+          <EyeOutlined
+            className="action-icon "
+            onClick={() => this.openOrderDetailsModal({ id: item.id })}
+          />
+        </Tooltip>
+        
+      </div>)
     },
   ];
 
@@ -406,7 +407,7 @@ export class Orders extends AppComponentBase<IOrdersProps, IOrdersState> {
           }}
         />
 
-        {/* <OrderDetailsModal
+        <OrderDetailsModal
           visible={this.state.orderDetailsModalVisible}
           onCancel={() =>
             this.setState({
@@ -414,7 +415,7 @@ export class Orders extends AppComponentBase<IOrdersProps, IOrdersState> {
             })
           }
           orderStore={this.props.orderStore!}
-        /> */}
+        />
       </Card>
     );
   }

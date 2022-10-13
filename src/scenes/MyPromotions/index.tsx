@@ -11,7 +11,7 @@ import {
   CheckSquareOutlined,
   EditOutlined,
   EyeOutlined,
-  PlusOutlined,
+  // PlusOutlined,
   StopOutlined,
 } from '@ant-design/icons';
 import timingHelper from '../../lib/timingHelper';
@@ -24,7 +24,7 @@ import ImageModal from '../../components/ImageModal';
 import SliderImageDetailsModal from './components/sliderImageDetialsModal';
 import { ShopDto } from '../../services/shops/dto/shopDto';
 import shopsService from '../../services/shops/shopsService';
-import localization from '../../lib/localization';
+// import localization from '../../lib/localization';
 import { popupConfirm } from '../../lib/popupMessages';
 import CreateOrUpdateSliderImage from './components/createOrUpdateSliderImage';
 
@@ -281,14 +281,14 @@ export class MyPromotions extends AppComponentBase<ISliderImagesProps, ISliderIm
         title={
           <div>
             <span>{L('MyPromotions')}</span>
-            <Button
+            {/* <Button
               type="primary"
               style={{ float: localization.getFloat() }}
               icon={<PlusOutlined />}
               onClick={() => this.openSliderImageModal({ id: 0 })}
             >
               {L('AddSliderImage')}
-            </Button>
+            </Button> */}
           </div>
         }
       >

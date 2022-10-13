@@ -42,6 +42,10 @@ class ClientsService {
     });
     return result.data.result;
   }
+  public async getShopFollowers(input?: Number): Promise<PagedResultDto<ClientDto>> {
+    let result = await http.get('api/services/app/Client/GetClientsFollowedShop?ShopId='+input);
+    return result.data.result;
+  }
 
   public async getClient(input: EntityDto): Promise<ClientDto> {
     let result = await http.get('api/services/app/Client/Get', { params: { id: input.id } });

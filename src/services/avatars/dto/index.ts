@@ -2,6 +2,7 @@ import { GenderType, MonthName } from '../../../lib/types';
 
 export interface CreateOrUpdateAvatarDto {
   image: string;
+  avatarUrl: string,
   arDescription: string;
   enDescription: string;
   gender: GenderType;
@@ -13,6 +14,7 @@ export interface CreateOrUpdateAvatarDto {
 
 export interface AvatarDto {
   image: string;
+  avatarUrl: string,
   arDescription: string;
   enDescription: string;
   description: string;

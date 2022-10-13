@@ -817,11 +817,12 @@ export class ShopDashboard extends React.Component<IDashboardProps, IDashboardSt
             </Card>
           </Col>{' '}
           <Col className="dashboardCard customCard" xs={12} sm={9} md={9} lg={4}>
+            {/* New Dashboard Card */}
             <Card className="dasboardCard-item" loading={cardLoading}>
               <label className="dashboardCardCounter">
-                <ThousandSeparator number={dashboardData!.cancelledOrders} />
+                <ThousandSeparator number={this?.shopInfo?.followersCount} />
               </label>
-              <span className="dashboardCardName">{L('CancelledOrders')}</span>
+              <span className="dashboardCardName">{L('FollowersCount')}</span>
               <div className="vertical-line" />
             </Card>
           </Col>{' '}

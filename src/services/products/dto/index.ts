@@ -66,6 +66,7 @@ export interface ProductDto {
   enName: string | null;
   name: string | null;
   id: number;
+  notifyAllFollowers: boolean;
 }
 
 export interface CreateProductDto {
@@ -112,4 +113,5 @@ export interface UpdateProductDto {
   gallery: string[];
   combinations: ProductCombinationCreationDto[];
   attributes: CustomObject<string>;
+  notifyAllFollowers: boolean;
 }

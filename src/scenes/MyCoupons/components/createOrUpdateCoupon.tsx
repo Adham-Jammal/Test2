@@ -20,12 +20,15 @@ import localization from '../../../lib/localization';
 import { FormInstance } from 'antd/lib/form';
 import CouponStore from '../../../stores/couponStore';
 import { LiteEntityDto } from '../../../services/dto/liteEntityDto';
-import classificationsService from '../../../services/classifications/classificationsService';
+// import classificationsService from '../../../services/classifications/classificationsService';
 import { CreateCouponDto } from '../../../services/coupons/dto/createCouponDto';
 import { UpdateCouponDto } from '../../../services/coupons/dto/updateCouponDto';
 import timingHelper from '../../../lib/timingHelper';
 import moment from 'moment';
 import clientsService from '../../../services/clients/clientsService';
+import {  ClientDto } from '../../../services/clients/dto/clientDto';
+import { ShopDto } from '../../../services/shops/dto/shopDto';
+import shopsService from '../../../services/shops/shopsService';
 
 export interface ICreateOrUpdateCouponProps {
   visible: boolean;
@@ -68,15 +71,22 @@ const colLayout = {
 @inject(Stores.CouponStore)
 @observer
 class CreateOrUpdateCoupon extends React.Component<ICreateOrUpdateCouponProps, any> {
-  classifications: LiteEntityDto[] = [];
-  clients: LiteEntityDto[] = [];
+  shopInfo: ShopDto | undefined = undefined;
+  classifications: ClientDto[] = [];
+  clients: ClientDto[] = [];
   state = {
     forAllClients: undefined,
   };
   async componentDidMount() {
-    let result = await classificationsService.getAllLite();
+    let shopInfoResult = await shopsService.getCurrentShopInfo();
+    const [shopInfo] = await Promise.all([
+      shopsService.getCurrentShopInfo(),
+    ]);
+    this.shopInfo = shopInfo;
+    this.shopInfo = shopInfoResult;
+    let result = await clientsService.getShopFollowers(this.shopInfo?.id!);
     this.classifications = result.items;
-    const clientsResult = await clientsService.getAllLite({ isActive: true });
+    const clientsResult = await clientsService.getShopFollowers(this.shopInfo?.id!);
     this.clients = clientsResult.items;
   }
 
@@ -287,9 +297,9 @@ class CreateOrUpdateCoupon extends React.Component<ICreateOrUpdateCouponProps, a
                     optionFilterProp="children"
                   >
                     {this.clients.length > 0 &&
-                      this.clients.map((element: LiteEntityDto) => (
-                        <Select.Option key={+element.value} value={+element.value}>
-                          {element.text}
+                      this.clients.map((element: ClientDto) => (
+                        <Select.Option key={+element.id} value={+element.id}>
+                          {element.fullName}
                         </Select.Option>
                       ))}
                   </Select>
@@ -359,9 +369,9 @@ class CreateOrUpdateCoupon extends React.Component<ICreateOrUpdateCouponProps, a
                   }
                 >
                   {this.classifications.length > 0 &&
-                    this.classifications.map((element: LiteEntityDto) => (
-                      <Select.Option key={element.value} value={element.value}>
-                        {element.text}
+                    this.classifications.map((element: ClientDto) => (
+                      <Select.Option key={element.name} value={element.name}>
+                        {element.name}
                       </Select.Option>
                     ))}
                 </Select>

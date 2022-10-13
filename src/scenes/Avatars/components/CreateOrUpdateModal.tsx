@@ -52,7 +52,10 @@ const CreateOrUpdateAvatar: React.FC<CreateOrUpdateAvatarProps> = ({
   avatarData,
 }) => {
   const [form] = Form.useForm();
+
   const [avatarImage, setAvatarImage] = useState<ImageAttr[]>([]);
+
+  const [avatar, setAvatar] = useState<ImageAttr[]>([]);
 
   const [arabicTitle, setArabicTitle] = useState<ItemValidation>();
 
@@ -61,6 +64,7 @@ const CreateOrUpdateAvatar: React.FC<CreateOrUpdateAvatarProps> = ({
   useEffect(() => {
     if (avatarData && modalType === 'update') {
       setAvatarImage(convertImageToImageArr(avatarData!.image, 'image'));
+      setAvatar(convertImageToImageArr(avatarData!.avatarUrl, 'avatar'));
       form.setFieldsValue(avatarData);
     }
   }, [avatarData]);
@@ -206,6 +210,19 @@ const CreateOrUpdateAvatar: React.FC<CreateOrUpdateAvatarProps> = ({
                 defaultFileList={avatarData! ? avatarImage : []}
                 onSuccess={(url: string) => form.setFieldsValue({ image: url })}
                 onRemove={() => form.setFieldsValue({ image: undefined })}
+              />
+            </Form.Item>
+            {/* Avarat */}
+            <Form.Item
+              label={L('Avatars')}
+              initialValue={avatarData! ? avatarData!.avatarUrl : undefined}
+              name="avatarUrl"
+              rules={[required]}
+            >
+              <EditableImage
+                defaultFileList={avatarData! ? avatar : []}
+                onSuccess={(url: string) => form.setFieldsValue({ avatarUrl: url })}
+                onRemove={() => form.setFieldsValue({ avatarUrl: undefined })}
               />
             </Form.Item>
           </Col>

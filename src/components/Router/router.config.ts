@@ -694,7 +694,7 @@ export const appRouters: any = [
     title: 'Notifications',
     name: 'notifications1',
     icon: 'fas fa-bell',
-    showInMenu: true,
+    showInMenu: false,
     roles: [1, 2, 3],
     component: LoadableComponent(() => import('../../scenes/MyNotifications')),
   },

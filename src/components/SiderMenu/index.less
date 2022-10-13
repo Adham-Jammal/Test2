@@ -1,0 +1,198 @@
+.sidebar {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 3px 10px 30px 3px rgba(0, 0, 0, 0.19);
+  background-color: white;
+  height: 95vh;
+  top: 2.5vh;
+  left: 10px;
+  border-radius: 6px;
+  z-index: 4444;
+  position: relative;
+  overflow: hidden;
+  &.rtl {
+    right: 10px;
+  }
+  @media screen and(max-width:800px) {
+    position: absolute;
+    transition: 0.3s ease-in;
+    &.hide-on-mobile {
+      transform: translateX(-1000%);
+      &.rtl {
+        transform: translateX(1000%);
+      }
+    }
+    &.show-on-mobile {
+      transform: translateX(0%);
+      &.rtl {
+        right: 10px;
+      }
+    }
+  }
+
+  .sidebar-scrolled-menu {
+    overflow-y: auto;
+    height: calc(100% - 145px);
+    position: relative;
+    &:hover {
+      &::-webkit-scrollbar {
+        display: block;
+      }
+    }
+    &::-webkit-scrollbar {
+      width: 6px !important;
+      display: none;
+    }
+    &::-webkit-scrollbar-track {
+      border-radius: 0px !important;
+      cursor: pointer;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 0px !important;
+      background: var(--primary-color);
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: var(--secondary-color);
+    }
+  }
+
+  .logo-wrapper {
+    padding: 20px;
+    width: 100%;
+    height: 85px;
+    overflow: hidden;
+    .close-sidebar {
+      display: none;
+      position: absolute;
+      top: 10px;
+      right: 0;
+      @media screen and(max-width:800px) {
+        display: block;
+      }
+      &.rtl {
+        left: 0;
+        right: unset;
+      }
+    }
+    img {
+      width: 100%;
+    }
+    @media screen and(max-width:800px) {
+      img {
+        width: 75%;
+      }
+    }
+    &.collapsed {
+      margin-bottom: 10px;
+      img {
+        width: 220px;
+        object-fit: cover;
+        object-position: 0%;
+      }
+    }
+  }
+  &.rtl {
+    .logo-wrapper {
+      &.collapsed {
+        img {
+          transform: scaleX(-1);
+        }
+      }
+    }
+  }
+  .user-card {
+    height: 60px;
+    padding: 0 10px;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 50px auto 40px;
+    .user-image {
+      margin: auto;
+    }
+    .user-name,
+    .user-type {
+      display: block;
+      font-weight: 600;
+    }
+    .user-type {
+      font-weight: 400;
+      font-size: 11px;
+    }
+    .log-out {
+      display: flex;
+      align-items: center;
+      justify-self: end;
+      justify-content: space-between;
+      gap: 6px;
+    }
+    .log-out a,
+    .log-out .anticon {
+      font-size: 18px;
+      cursor: pointer;
+      color: var(--primary-color);
+    }
+  }
+}
+
+.ant-menu-submenu-arrow::after,
+.ant-menu-submenu-arrow::before {
+  background-color: var(--primary-color) !important;
+  content: '';
+  position: absolute;
+}
+
+.users-submenu-rtl .ant-menu-submenu-title .ant-menu-submenu-arrow {
+  position: absolute;
+  right: 93%;
+  width: 6px;
+}
+.ant-menu-item svg,
+.ant-menu-submenu svg {
+  margin: 0 5px 0 0;
+  color: var(--primary-color);
+}
+
+.ant-menu-inline-collapsed .ant-menu-sub,
+.ant-menu-inline-collapsed .ant-menu-submenu-title {
+  padding: 0 !important;
+}
+
+.ant-menu-inline-collapsed .ant-menu-item,
+.ant-menu-inline-collapsed .ant-menu-submenu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ant-menu-inline-collapsed .ant-menu-item span,
+.ant-menu-inline-collapsed .ant-menu-submenu span span {
+  display: none !important;
+}
+
+.ant-menu.ant-menu-dark,
+.ant-menu-dark .ant-menu-sub,
+.ant-menu.ant-menu-dark .ant-menu-sub {
+  background-color: white !important;
+  color: #333 !important;
+}
+
+.ant-menu-dark .ant-menu-item .ant-menu-item-icon + span,
+.ant-menu-dark .ant-menu-item .anticon + span,
+.ant-menu-dark .ant-menu-submenu-open,
+.ant-menu-dark .ant-menu-submenu-selected {
+  color: #333 !important;
+}
+
+.users-submenu-ltr:hover .ant-menu-submenu-title span,
+.users-submenu-rtl:hover .ant-menu-submenu-title span,
+.ant-menu-item:hover .ant-menu-title-content span {
+  color: var(--primary-color) !important;
+}
+.ant-menu-item-selected:hover .ant-menu-title-content span {
+  color: #000 !important;
+}
+.ant-menu-dark .ant-menu-item-selected .ant-menu-item-icon + span,
+.ant-menu-dark .ant-menu-item-selected .anticon + span {
+  color: #fff !important;
+}

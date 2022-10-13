@@ -1,0 +1,77 @@
+* {
+  direction: rtl;
+  text-align: right;
+}
+*::before,
+*::after,
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Tajawal', sans-serif;
+  box-sizing: border-box;
+  font-weight: 400;
+}
+.lang .global-icon {
+  right: 97%;
+}
+
+.rtl-content .ant-table-row-cell-break-word {
+  text-align: right !important;
+}
+
+.ant-modal.rtl .ant-modal-confirm-btns {
+  float: left;
+}
+.ant-modal.rtl .ant-modal-confirm-btns button,
+.ant-modal.rtl-modal .ant-modal-footer button {
+  margin-right: 8px !important;
+  margin-left: 0px !important;
+}
+
+.ant-select-arrow {
+  left: 8px !important;
+  position: absolute;
+}
+
+.ant-modal.rtl-modal .ant-modal-close {
+  right: auto;
+  left: 0;
+}
+.ant-modal.rtl-modal .ant-modal-footer {
+  text-align: left;
+}
+
+.ant-table-thead .ant-table-cell {
+  text-align: right;
+}
+
+.ant-menu-item span {
+  margin: 0 2px;
+}
+
+.ant-tabs-tab-btn .anticon {
+  margin-left: 4px;
+}
+
+.permission-options label {
+  margin-right: 0;
+}
+
+.login-page .ant-btn-primary:hover .anticon,
+.login-page .ant-btn-primary:focus .anticon {
+  transform: translateX(-6px);
+}
+
+.login-page .ant-btn-default:hover .anticon,
+.login-page .ant-btn-default:focus .anticon {
+  transform: translateX(6px);
+}
+
+.ant-steps-vertical > .ant-steps-item {
+  padding-left: 15px !important;
+}
+
+.ant-menu-item svg,
+.ant-menu-submenu svg {
+  margin: 0 0 0 5px;
+}

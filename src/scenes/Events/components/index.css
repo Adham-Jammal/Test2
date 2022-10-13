@@ -1,0 +1,34 @@
+.start-date-input,
+.end-date-input {
+  display: inline-block;
+  width: calc(50% - 8px);
+}
+.end-date-input {
+  margin: 0 8px;
+}
+
+@media only screen and (max-width: 767px) {
+  .start-date-input,
+  .end-date-input {
+    width: 100%;
+  }
+}
+.ant-input-number,
+.ant-input-number-rtl {
+  width: 100%;
+}
+
+.map-hint-text {
+  margin-bottom: 8px;
+  display: block;
+  color: var(--third-color);
+}
+.loading-comp {
+  padding: 70px 0;
+  text-align: center;
+}
+#recurring {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}

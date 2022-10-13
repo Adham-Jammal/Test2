@@ -1,0 +1,149 @@
+.topBoxes {
+  .customCard {
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    display: inline-flex;
+    margin-bottom: 2%;
+    text-align: center;
+    overflow: hidden;
+    .ant-card-body {
+      padding: 0 12px !important;
+    }
+    .dasboardCard-item {
+      width: 100%;
+      border-radius: 5px;
+      border: none;
+      height: 120px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      text-align: center;
+      position: relative;
+      .dashboardCardCounter {
+        font-size: 35px;
+        color: #000;
+        display: block;
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        margin-top: -18px !important;
+        transition: all 1.2s ease;
+      }
+
+      .dashboardCardLabel {
+        font-size: 20px;
+        color: #000;
+        display: block;
+        text-align: center;
+        width: 100%;
+        margin: auto;
+        margin-top: -10px !important;
+        margin-bottom: 10px;
+        transition: all 3s ease;
+      }
+      .dashboardCardName {
+        font-size: 13px;
+        color: #888;
+        transition: all 1.2s ease;
+        text-align: center;
+        padding: 0;
+        z-index: 3;
+        position: relative;
+        display: block;
+      }
+
+      .dashboardCardIcon {
+        font-size: 48px;
+        color: #000;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 10px;
+      }
+      &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        left: -50%;
+        bottom: 80%;
+        position: absolute;
+        transform: scale(0);
+        background-color: var(--primary-color);
+        z-index: 1;
+        transition: transform 1.2s ease;
+      }
+      &:hover {
+        &::before {
+          transform: scale(4);
+        }
+        .dashboardCardName,
+        .dashboardCardCounter {
+          color: #fff !important;
+        }
+      }
+    }
+    .vertical-line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 6px;
+      border-radius: 8px 0 0 8px;
+      background-color: var(--primary-color);
+    }
+  }
+  &.rtl {
+    .dasboardCard-item {
+      &::before {
+        right: -50%;
+      }
+    }
+    .vertical-line {
+      right: 0;
+      border-radius: 0 8px 8px 0;
+    }
+  }
+}
+
+.excelBtn {
+  background: #1a9c54 !important;
+  border-radius: 5px;
+  padding: 4px 7px;
+  color: #fff;
+  border: none !important;
+}
+
+.excelBtn svg {
+  font-weight: bold !important;
+  font-size: 18px !important;
+  color: #fff !important;
+}
+
+.excelBtn:hover {
+  background: #333 !important;
+}
+
+.dashboardBox {
+  margin-top: 16px;
+  background: #fff;
+  min-height: 240px;
+  border-radius: 5px;
+}
+
+.topBoxes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cardTitle {
+  margin: auto;
+  width: fit-content;
+  display: block;
+  margin-bottom: 20px;
+  font-size: 25px;
+  color: #fff;
+}

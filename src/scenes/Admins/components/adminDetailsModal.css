@@ -1,0 +1,32 @@
+.details-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+.detail-wrapper {
+  margin-bottom: 15px;
+  width: 50%;
+}
+.detail-wrapper.big {
+  width: 100%;
+}
+
+.detail-label {
+  font-weight: 600 !important;
+  display: block;
+}
+.detail-value {
+  display: block;
+}
+
+.detail-value.permissions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.details-sub-permission {
+  margin: 0 20px;
+}
+.details-permission {
+  width: 30%;
+}

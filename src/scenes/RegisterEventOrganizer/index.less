@@ -1,0 +1,120 @@
+@import '~antd/lib/style/themes/default.less';
+
+.main {
+  width: 368px;
+  margin: 0 auto;
+  @media screen and (max-width: @screen-sm) {
+    width: 95%;
+  }
+
+  .icon {
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.2);
+    margin-left: 16px;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: color 0.3s;
+
+    &:hover {
+      color: @primary-color;
+    }
+  }
+
+  .other {
+    text-align: left;
+    margin-top: 24px;
+    line-height: 22px;
+
+    .register {
+      float: right;
+    }
+  }
+}
+
+.login-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.login-card {
+  width: 400px;
+  margin: 0 auto;
+  @media screen and (max-width: @screen-sm) {
+    max-width: 400px;
+    width: auto;
+  }
+}
+.login-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo-wrap {
+  margin: 15px auto;
+  width: 186px;
+  height: 90px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+.checkbox-wrap {
+  .ant-checkbox-wrapper {
+    scroll-margin-inline-start: 10px;
+  }
+}
+.register-cta {
+  margin-top: 15px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 0;
+  a {
+    color: var(--primary-color);
+  }
+  &:hover {
+    a {
+      color: #000000;
+    }
+  }
+}
+
+.submit-wrap {
+  margin: 30px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  button {
+    padding: 0 40px;
+  }
+}
+
+.register-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 30px;
+  svg {
+    width: 25px;
+    height: 25px;
+  }
+  h3 {
+    justify-self: center;
+    flex: 1;
+    text-align: center;
+  }
+}
+
+.ant-card:not(.ant-card-rtl) {
+  .anticon-arrow-right {
+    transform: scale(-1, 1);
+  }
+}

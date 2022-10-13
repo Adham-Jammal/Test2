@@ -1,0 +1,24 @@
+.details-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+.detail-wrapper {
+  margin-bottom: 15px;
+  width: 50%;
+}
+
+.detail-label {
+  font-weight: 600 !important;
+  display: block;
+}
+.detail-value {
+  display: inline;
+  margin: 0 5px;
+}
+
+/* .shop-logo {
+  width: %;
+}
+.shop-cover {
+  width: 75%;
+} */

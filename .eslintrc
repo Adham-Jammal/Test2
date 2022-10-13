@@ -1,0 +1,40 @@
+{
+  "extends": ["eslint-config-react-app"],
+  "plugins": ["react", "import"],
+  "rules": {
+    "import/no-unresolved": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/prop-types": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-unused-vars": "warn", // Imports of interfaces throw this.
+    "react/jsx-one-expression-per-line": 0,
+    "no-param-reassign": 0,
+    "react/jsx-props-no-spreading": "off",
+    "react/display-name": "off",
+    "react/jsx-wrap-multilines": "off",
+    "react/state-in-constructor": "off",
+    "class-methods-use-this": "off",
+    "@typescript-eslint/dot-notation": "off",
+    "react/destructuring-assignment": "off",
+    "no-use-before-define": ["error", { "functions": false, "classes": false, "variables": false }],
+    "@typescript-eslint/no-use-before-define": [
+      "error",
+      { "functions": false, "classes": false, "variables": false }
+    ]
+  },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "react": {
+      "pragma": "React",
+      "version": "detect"
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    }
+  }
+}

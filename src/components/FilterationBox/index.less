@@ -1,0 +1,29 @@
+.filteration-area {
+  margin-top: 15px;
+}
+.filteration-area .icon {
+  color: #000;
+  cursor: pointer;
+  transition: 0.3 all;
+}
+
+.filteration-area .icon:hover {
+  color: var(--primary-color);
+}
+
+.filteration-box {
+  overflow: hidden;
+  max-height: 500px; /* approximate max height */
+  margin-top: 15px;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.filteration-box.closed {
+  max-height: 0;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.filteration-area label {
+  margin-bottom: 5px;
+  display: block;
+}

@@ -1,0 +1,28 @@
+.events-imgs {
+  font-weight: bold;
+  font-size: 18px;
+  margin: 0 15px;
+}
+/* .events-imgs li img {
+  width: 30%;
+
+  border: 2px outset var(--primary-color);
+  border-radius: 8px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+*/
+
+.events-imgs .events-imgs li {
+  cursor: move;
+  position: relative;
+  margin-bottom: 15px;
+}
+.events-imgs li span {
+  position: relative;
+  width: fit-content;
+  cursor: move;
+  display: block;
+}
+/* body > li:last-of-type {
+  display: none !important;
+} */

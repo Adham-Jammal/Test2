@@ -1,0 +1,42 @@
+.details-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  inset: 0 10%;
+  overflow: hidden;
+}
+
+.details-wrapper ul {
+  list-style-position: inside;
+}
+
+.event-details-modal .detail-wrapper {
+  margin-bottom: 20px !important;
+  width: 50%;
+}
+
+.detail-wrapper.image {
+  margin-bottom: 25px;
+  width: 55%;
+  margin: auto;
+  position: relative;
+}
+
+.detail-wrapper.image .event-cover {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  position: relative;
+}
+
+.detail-wrapper.image .detail-value {
+  display: block;
+  margin: auto;
+}
+
+.detail-label {
+  font-weight: 600 !important;
+  display: block;
+}
+.detail-value {
+  display: inline;
+}

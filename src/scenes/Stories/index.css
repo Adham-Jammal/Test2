@@ -1,0 +1,35 @@
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.story-image {
+  cursor: zoom-in;
+}
+.video-preview,
+.image-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.image-preview--details,
+.video-preview--details {
+  justify-content: flex-start;
+  margin-top: 10px;
+  margin-inline-start: 30px;
+}
+.video-preview svg {
+  font-size: 30px;
+}
+.video-preview:hover svg {
+  color: #ff0000;
+}
+
+.media-uploader .ant-upload {
+  text-align: center;
+  width: 100%;
+}
+.media-uploader .ant-upload .ant-upload-drag-icon,
+.media-uploader .ant-upload .ant-upload-text {
+  text-align: center;
+}

@@ -1,0 +1,14 @@
+.site-tag-plus {
+  background: #fff;
+  border-style: dashed;
+  padding: 4px 8px;
+}
+.edit-tag {
+  user-select: none;
+  padding: 4px 8px;
+}
+.tag-input {
+  width: 78px;
+  vertical-align: top;
+  padding: 4px 8px;
+}

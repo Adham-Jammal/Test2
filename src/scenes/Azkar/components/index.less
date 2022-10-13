@@ -1,0 +1,48 @@
+.azkar-date {
+  .start-date-input,
+  .end-date-input {
+    display: inline-block;
+    width: calc(50% - 8px);
+    margin-bottom: 0;
+    .rmdp-container,
+    input {
+      width: 100%;
+    }
+    input {
+      padding: 16px 10px;
+    }
+  }
+  .end-date-input {
+    margin-inline-start: 10px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .start-date-input,
+  .end-date-input {
+    width: 100%;
+  }
+}
+
+.descriptions-wrap {
+  .ant-descriptions-item {
+    padding-bottom: 7px;
+  }
+  .ant-descriptions-row {
+    & > th {
+      .ant-descriptions-item-container {
+        span {
+          font-size: 16px;
+          font-weight: 700;
+        }
+      }
+    }
+    & > td {
+      .ant-descriptions-item-container {
+        margin-bottom: 20px;
+        span {
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}

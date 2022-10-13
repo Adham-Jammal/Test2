@@ -1,0 +1,21 @@
+.details-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+.detail-wrapper {
+  margin-bottom: 15px;
+  width: 50%;
+}
+
+.detail-label {
+  font-weight: 600 !important;
+  display: block;
+}
+.detail-value {
+  display: inline;
+  margin: 0 5px;
+}
+.promoter-details-modal {
+  height: 70vh !important;
+  overflow: auto;
+}

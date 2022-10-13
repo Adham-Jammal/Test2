@@ -1,0 +1,92 @@
+.trigger {
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+  position: relative;
+}
+
+.trigger:hover {
+  color: var(--primary-color);
+}
+
+.logo {
+  height: 32px;
+  margin: 16px;
+}
+.header-container .pageTitle {
+  position: relative;
+  top: 2px;
+  font-weight: 700;
+}
+
+.header-container {
+  -webkit-box-shadow: 0px 6px 50px -18px rgba(0, 0, 0, 0.81);
+  -moz-box-shadow: 0px 6px 50px -18px rgba(0, 0, 0, 0.81);
+  box-shadow: 0px 6px 50px -18px rgba(0, 0, 0, 0.81);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.first-col,
+.second-col {
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-container.rtl .first-col {
+  right: 0;
+}
+.header-container.ltr .first-col {
+  left: 0;
+}
+
+.header-container.rtl .second-col {
+  right: 94%;
+}
+.header-container.ltr .second-col {
+  right: 0;
+}
+
+.header-container .trigger,
+.header-container .global-icon {
+  top: 5px;
+  font-size: 20px;
+}
+.header-container .global-icon {
+  transition: 0.3s all;
+  &:hover,
+  &:focus {
+    color: var(--primary-color);
+  }
+}
+.header-container .log-out a {
+  color: white;
+  font-size: 20px;
+  transition: 0.3s all;
+  &:hover {
+    color: var(--primary-color);
+  }
+}
+.header-container .log-out {
+  top: 5px;
+  position: relative;
+}
+
+.first-col {
+  @media screen and(max-width:800px) {
+    display: none;
+  }
+}
+.first-col-mobile {
+  display: none;
+  @media screen and(max-width:800px) {
+    display: block;
+  }
+}

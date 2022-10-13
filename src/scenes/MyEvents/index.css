@@ -1,0 +1,19 @@
+.events-page-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.event-table,
+.btns-wrap {
+  margin-top: 20px;
+}
+.filter-select {
+  display: block;
+}
+.category-select {
+  margin-inline-start: 20px;
+}
+.filter-btn {
+  margin-inline-end: 20px;
+}

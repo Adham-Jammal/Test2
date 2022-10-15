@@ -9,6 +9,9 @@ import {
   DownOutlined,
   EyeOutlined,
   FilterOutlined,
+  StopOutlined,
+  CheckSquareOutlined,
+  DeleteOutlined,
   UpOutlined,
 } from '@ant-design/icons';
 import { EntityDto } from '../../services/dto/entityDto';
@@ -22,6 +25,8 @@ import { LiteEntityDto } from '../../services/locations/dto/liteEntityDto';
 import { ShopDto } from '../../services/shops/dto/shopDto';
 import { OrderType, PaymentMethod } from '../../lib/types';
 import OrderDetailsModal from './components/orderDetailsModal';
+import OrdersService from '../../services/orders/ordersService'
+import { popupConfirm } from '../../lib/popupMessages';
 
 export interface IOrdersProps {
   orderStore: OrderStore;
@@ -76,6 +81,24 @@ export class Orders extends AppComponentBase<IOrdersProps, IOrdersState> {
   async openOrderDetailsModal(entityDto: EntityDto) {
     await this.props.orderStore!.getOrder(entityDto);
     this.setState({ orderDetailsModalVisible: !this.state.orderDetailsModalVisible });
+  }
+  async rejectOrder (entityDto: EntityDto) {
+    popupConfirm(async () => {
+      await OrdersService.rejectOrder(entityDto);
+      this.updateOrdersList(this.state.meta.pageSize, this.state.meta.skipCount);
+    }, L('AreYouSureYouWantToApproveThisOrder'));
+  }
+  async approveOrder (entityDto: EntityDto) {
+    popupConfirm(async () => {
+      await OrdersService.approveOrder(entityDto);
+      this.updateOrdersList(this.state.meta.pageSize, this.state.meta.skipCount);
+    }, L('AreYouSureYouWantToApproveThisOrder'));
+  }
+  async CancelOrder (entityDto: EntityDto) {
+    popupConfirm(async () => {
+      await OrdersService.CancelOrder(entityDto);
+      this.updateOrdersList(this.state.meta.pageSize, this.state.meta.skipCount);
+    }, L('AreYouSureYouWantToCancelThisOrder'));
   }
 
   async componentDidMount() {
@@ -314,7 +337,27 @@ export class Orders extends AppComponentBase<IOrdersProps, IOrdersState> {
             onClick={() => this.openOrderDetailsModal({ id: item.id })}
           />
         </Tooltip>
-        
+        {item.status == 0 ? (
+        <Tooltip title={L('Reject')}>
+          <StopOutlined
+            className="action-icon red-text"
+            onClick={() => this.rejectOrder({ id: item.id })}
+          />
+        </Tooltip>): null}
+        {item.status == 0 ? (
+        <Tooltip title={L('Approve')}>
+          <CheckSquareOutlined
+            className="action-icon green-text"
+            onClick={() => this.approveOrder({ id: item.id })}
+          />
+        </Tooltip>): null}
+        {item.status == 0 ? (
+        <Tooltip title={L('CancelOrder')}>
+          <DeleteOutlined
+            className="action-icon red-text"
+            onClick={() => this.CancelOrder({ id: item.id })}
+          />
+        </Tooltip>): null}
       </div>)
     },
   ];

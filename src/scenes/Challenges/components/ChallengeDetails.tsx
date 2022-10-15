@@ -7,7 +7,7 @@ import localization from '../../../lib/localization';
 import timingHelper from '../../../lib/timingHelper';
 import './index.less';
 import ImageModel from '../../../components/ImageModal';
-import { ChallengeDto, StepType } from '../../../services/challenges/dto';
+import { ChallengeDto, /*StepType*/ } from '../../../services/challenges/dto';
 import GoogleMapComp from '../../../components/GoogleMap';
 
 interface ChallengeDetailsProps {
@@ -40,8 +40,8 @@ const ChallengeDetails: React.FC<ChallengeDetailsProps> = ({
     targetLocationLongitude,
     targetLocationLatitude,
     targetLocationName,
-    isJoined,
-    currentStep,
+    // isJoined,
+    // currentStep,
     date,
   } = challengeData || {};
 
@@ -103,15 +103,15 @@ const ChallengeDetails: React.FC<ChallengeDetailsProps> = ({
         <Descriptions.Item label={L('ChallengeDate')}>
           {moment(date).format(timingHelper.defaultDateFormat)}
         </Descriptions.Item>
-        <Descriptions.Item label={L('IsJoined')}>
+        {/* <Descriptions.Item label={L('IsJoined')}>
           {' '}
           {isJoined ? (
             <Tag color="red">{L('Joined')}</Tag>
           ) : (
             <Tag color="green">{L('UnJoined')}</Tag>
           )}
-        </Descriptions.Item>
-        <Descriptions.Item label={L('CurrentStep')}>
+        </Descriptions.Item> */}
+        {/* <Descriptions.Item label={L('CurrentStep')}>
           <Tag color="blue">
             {currentStep === StepType.Joined
               ? L('Joined')
@@ -123,7 +123,7 @@ const ChallengeDetails: React.FC<ChallengeDetailsProps> = ({
               ? L('VerifiedMoment')
               : L('ClaimRewards')}
           </Tag>
-        </Descriptions.Item>
+        </Descriptions.Item> */}
 
         <Descriptions.Item label={L('FirstLocation')}>
           <div style={{ display: 'flex', gap: '10px', flexDirection: 'column', width: '90%' }}>

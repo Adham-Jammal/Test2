@@ -29,6 +29,19 @@ class OrdersService {
     const result = await http.put('api/services/app/Order/ChangeStatus', input);
     return result.data;
   }
+
+  public async rejectOrder(input: EntityDto) {
+    const result = await http.post('api/services/app/Order/Reject', { id: input.id });
+    return result.data;
+  }  
+  public async approveOrder(input: EntityDto) {
+    const result = await http.post('api/services/app/Order/Approve', { id: input.id });
+    return result.data;
+  }
+  public async CancelOrder(input: EntityDto) {
+    const result = await http.put('api/services/app/Order/Cancel', { id: input.id });
+    return result.data;
+  }
 }
 
 export default new OrdersService();

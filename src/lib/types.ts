@@ -183,12 +183,12 @@ export enum StockStatus {
 
 export enum OrderType {
   Waiting = 0,
-  Approved = 1,
-  InProgress = 2,
-  OnTheWay = 3,
-  Delivered = 4,
-  Cancelled = 5,
-  Rejected = 6,
+  Approved = 10,
+  InProgress = 11,
+  OnTheWay = 12,
+  Delivered = 13,
+  Cancelled = 20,
+  Rejected = 21,
 }
 
 export enum EventType {

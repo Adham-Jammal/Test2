@@ -341,6 +341,16 @@ export const appRouters: any = [
     showInMenu: true,
     roles: [2],
   },
+  // Rating Dashboard Tab
+  {
+    path: '/MyReviews',
+    title: 'Reviews',
+    name: 'rate',
+    icon: 'fas fa-award',
+    component: LoadableComponent(() => import('../../scenes/MyReviews')),
+    showInMenu: true,
+    roles: [2],
+  },
   {
     path: '/categories',
     permission: 'Categories.List',

@@ -11,6 +11,7 @@ import ClassificationStore from './classificationStore';
 import ClientStore from './clientStore';
 import ProductStore from './productStore';
 import OrderStore from './orderStore';
+import ReviewStore from './reviewStore';
 import EventStore from './eventStore';
 import ShopStore from './shopStore';
 import PromoterStore from './promoterStore';
@@ -53,6 +54,7 @@ export default function initializeStores() {
     clientStore: new ClientStore(),
     productStore: new ProductStore(),
     orderStore: new OrderStore(),
+    reviewStore: new ReviewStore(),
     eventStore: new EventStore(),
     shopStore: new ShopStore(),
     promoterStore: new PromoterStore(),

@@ -27,6 +27,8 @@ export default class Stores {
 
   static OrderStore = 'orderStore';
 
+  static ReviewStore = 'reviewStore';
+
   static EventStore = 'eventStore';
 
   static ShopStore = 'shopStore';

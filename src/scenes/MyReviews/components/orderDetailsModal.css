@@ -1,0 +1,38 @@
+.product-details-modal {
+  height: 55vh;
+  overflow-y: auto;
+}
+
+.product-details-modal .ant-modal-body .ant-tabs {
+  margin-top: -25px !important;
+}
+
+.product-details-modal .gallery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.product-details-modal .gallery .gallery-item {
+  border: 2px outset var(--primary-color);
+  border-radius: 8px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  margin: 0 5px;
+}
+
+.details-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+.detail-wrapper {
+  margin-bottom: 15px;
+  width: 50%;
+}
+
+.detail-label {
+  font-weight: 600 !important;
+  display: block;
+}
+.detail-value {
+  display: inline;
+}
